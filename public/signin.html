@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>ADIB Ideation</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheets/style.css">
+  </head>
+
+  <body class="form-style-5">
+    <div>
+      <div class="logo-wrapper">
+        <img src="images/adiblogo.jpg" class="fw-img">
+      </div>
+      <h1 id="message">Sign In</h1>
+      <form method="post" action="/authenticate">
+        <input type="text" name="username" placeholder="Your Username *">
+        <input type="password" name="password" placeholder="Your Password *">
+        <input type="submit" name="signinButton" value="Sign in">
+      </form>
+      <form method="post" action="/register">
+        <input type="submit" name="registerButton" value="Register">
+      </form>
+    </div>
+  </body>
+</html>

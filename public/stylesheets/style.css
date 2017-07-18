@@ -1,0 +1,435 @@
+/* style.css
+ * This file provides css styles.
+ */
+
+body,html {
+	background-color: #eee; width : 100%;
+	height: 100%;
+	margin: 0 auto;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	color: #8a97a0;
+}
+
+a {
+	text-decoration: none;
+	color: #00aed1;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.democont{
+	background: #ff0000;
+}
+
+#main-wrapper{}
+.mainwrapper{
+	margin-left: auto;
+	margin-right: auto;
+	width:100%;
+	max-width: 960px;
+}
+
+.storewrapper{
+	width: 80%;
+	height:auto;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+}
+
+.reviewwrapper{
+	width: 80%;
+	height:auto;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+}
+
+.storecontainer{
+
+}
+
+.storeheader{
+	
+}
+
+.reviewcontainer{
+
+}
+
+.reviewstats{
+
+}
+
+#header-container{
+
+}
+
+
+
+
+.newappIcon {
+	padding-top: 10%;
+	display: block;
+	margin: 0 auto;
+	padding-bottom: 2em;
+	max-width:200px;
+}
+
+h1 {
+	color:#8a97a0;
+	font-weight: bold;
+	font-size: 2em;
+}
+
+.leftHalf {
+	float: left;
+	background-color: #26343f;
+	width: 45%;
+	height: 100%;
+}
+
+.rightHalf {
+	float: right;
+	width: 55%;
+	background-color: #313f4a;
+	height: 100%;
+	overflow:auto;
+}
+
+.testing{
+	width: 100%;
+	height:200px;
+	background: #333;
+	color:#000;
+}
+
+.blue {
+	color: #00aed1;
+}
+
+
+table {
+	table-layout: fixed;
+	width: 800px;
+	margin: 0 auto;
+	word-wrap: break-word;
+	padding-top:10%;
+}
+
+th {
+	border-bottom: 1px solid #000;
+}
+
+th, td {
+	text-align: left;
+	padding: 2px 20px;
+}
+
+.env-var {
+	text-align: right;
+	border-right: 1px solid #000;
+	width: 30%;
+}
+
+pre {
+	padding: 0;
+	margin: 0;
+}
+
+.logo-wrapper{
+	width: 70%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.fw-img{
+	width:100%;
+	height: auto;
+}
+
+.post-container{
+	width: 100%;
+	height: 90px;
+	border-radius: 10px;
+	background: #efefef;
+	color: #0066a4;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.post-title{
+	font-size: 100%;
+	font-weight: 700;
+	float:left;
+	margin:8px;
+	margin-left: 12px;
+	margin-right: 0px;
+	width: 80%;
+}
+
+.post-vote-container{
+	font-size: 100%;
+	float:right;
+	margin:8px;
+	margin-left: 0px;
+	width: 15%;
+}
+.vote-count{
+	font-size: 100%;
+	font-weight: 700;
+	float: right;
+	margin-right: 2px;
+}
+
+.post-vote-icon{
+	float: right;
+    margin-right: 20px;
+    margin-left: 5px;
+    margin-top: 2px;
+}
+
+.post-subtitle{
+	font-size: 80%;
+	font-weight: 300;
+	float:left;
+	margin:8px;
+	margin-top: 1px;
+	margin-left: 12px;
+	width: 100%;
+}
+
+.post-idea{
+	font-size: 70%;
+	font-weight: 100;
+	float:left;
+	margin:8px;
+	margin-left: 12px;
+	margin-top: 2px;
+	width: 100%;
+}
+
+/*
+ Feed and pagination handling
+*/
+.paginator-container{
+	width: 100%;
+    height: auto;
+    margin: 0px;
+    margin-bottom: 50px;
+    margin-top: 10px;
+}
+.pagination-item{
+	background: #eee;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #ddd;
+    border-width: 1px;
+    width: 15px;
+    float: left;
+    margin-left: 3px;
+}
+.pagination-item:hover{
+	background: #ddd;
+	border-color: #ccc;
+	align-content: center;
+}
+.pagination-label{
+	color: #0b92cc;
+	text-align: center;
+	font-size: 80%;
+}
+/*  */
+
+
+.form-style-5{
+    max-width: 500px;
+    padding: 10px 20px;
+    background: #FFFFFF!important;
+    margin: 10px auto;
+    padding: 20px;
+    background: #f4f7f8;
+    border-radius: 8px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+.form-style-5 fieldset{
+    border: none;
+}
+.form-style-5 legend {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+.form-style-5 label {
+    display: block;
+    margin-bottom: 8px;
+}
+.form-style-5 input[type="text"],
+.form-style-5 input[type="password"],
+.form-style-5 input[type="date"],
+.form-style-5 input[type="datetime"],
+.form-style-5 input[type="email"],
+.form-style-5 input[type="number"],
+.form-style-5 input[type="search"],
+.form-style-5 input[type="time"],
+.form-style-5 input[type="url"],
+.form-style-5 textarea,
+.form-style-5 select {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    background: rgba(255,255,255,.1);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 0;
+    outline: 0;
+    padding: 7px;
+    width: 100%;
+    box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    background-color: #e8eeef;
+    color:#8a97a0;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 20px;
+    
+}
+.form-style-5 input[type="text"]:focus,
+.form-style-5 input[type="password"]:focus,
+.form-style-5 input[type="date"]:focus,
+.form-style-5 input[type="datetime"]:focus,
+.form-style-5 input[type="email"]:focus,
+.form-style-5 input[type="number"]:focus,
+.form-style-5 input[type="search"]:focus,
+.form-style-5 input[type="time"]:focus,
+.form-style-5 input[type="url"]:focus,
+.form-style-5 textarea:focus,
+.form-style-5 select:focus{
+    background: #d2d9dd;
+}
+.form-style-5 select{
+    -webkit-appearance: menulist-button;
+    height:35px;
+}
+.form-style-5 .number {
+    background: #1abc9c;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    border-radius: 15px 15px 15px 0px;
+}
+
+.form-style-5 input[type="submit"],
+.form-style-5 input[type="button"]
+{
+	border-radius: 10px;
+    position: relative;
+    display: block;
+    padding: 19px 39px 18px 39px;
+    color: #FFF;
+    margin: 0 auto;
+    background: #0b92cc;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    width: 100%;
+    border: 1px solid #0b92cc;
+    border-width: 1px 1px 3px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.form-style-5 input[type="submit"]:hover,
+.form-style-5 input[type="button"]:hover
+{
+    background: #0066a4;
+}
+
+[type="checkbox"]:not(:checked),
+	[type="checkbox"]:checked {
+		position: absolute;
+		left: -9999px;
+	}
+	[type="checkbox"]:not(:checked) + label,
+	[type="checkbox"]:checked + label {
+		position: relative;
+		padding-left: 75px;
+		cursor: pointer;
+	}
+	[type="checkbox"]:not(:checked) + label:before,
+	[type="checkbox"]:checked + label:before,
+	[type="checkbox"]:not(:checked) + label:after,
+	[type="checkbox"]:checked + label:after {
+		content: '';
+		position: absolute;
+	}
+	[type="checkbox"]:not(:checked) + label:before,
+	[type="checkbox"]:checked + label:before {
+		left:0; top: -3px;
+		width: 65px; height: 30px;
+		background: #DDDDDD;
+		border-radius: 15px;
+		-webkit-transition: background-color .2s;
+		-moz-transition: background-color .2s;
+		-ms-transition: background-color .2s;
+		transition: background-color .2s;
+	}
+	[type="checkbox"]:not(:checked) + label:after,
+	[type="checkbox"]:checked + label:after {
+		width: 20px; height: 20px;
+		-webkit-transition: all .2s;
+		-moz-transition: all .2s;
+		-ms-transition: all .2s;
+		transition: all .2s;
+		border-radius: 50%;
+		background: #0b92cc;
+		top: 2px; left: 5px;
+	}
+
+	/* on checked */
+	[type="checkbox"]:checked + label:before {
+		background:#0b92cc; 
+	}
+	[type="checkbox"]:checked + label:after {
+		background: #FFFFFF;
+		top: 2px; left: 40px;
+	}
+
+	[type="checkbox"]:checked + label .ui,
+	[type="checkbox"]:not(:checked) + label .ui:before,
+	[type="checkbox"]:checked + label .ui:after {
+		position: absolute;
+		left: 6px;
+		width: 65px;
+		border-radius: 15px;
+		font-size: 14px;
+		font-weight: bold;
+		line-height: 22px;
+		-webkit-transition: all .2s;
+		-moz-transition: all .2s;
+		-ms-transition: all .2s;
+		transition: all .2s;
+	}
+	[type="checkbox"]:not(:checked) + label .ui:before {
+		content: "no";
+		left: 32px
+	}
+	[type="checkbox"]:checked + label .ui:after {
+		content: "yes";
+		color: #FFFFFF;
+	}
+	[type="checkbox"]:focus + label:before {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		box-sizing: border-box;
+		margin-top: -1px;
+	}
+

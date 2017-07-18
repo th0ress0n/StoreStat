@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>ADIB Ideation</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheets/style.css">
+  </head>
+
+  <body class="form-style-5">
+    <div>
+      <div class="logo-wrapper">
+        <img src="images/adiblogo.jpg" class="fw-img">
+      </div>
+      <h1 id="message">Post Idea</h1>
+      <h5>Use the below form to post your idea to the board. Each idea will be taken into consideration. Your contribution to ADIB's future is highly appreciated.</h5>
+      <form method="post" action="/submitpost">
+        <input type="text" name="title" placeholder="Title for your idea *">
+        <input type="text" name="subtitle" placeholder="Short description of your idea *">
+        <input type="text" name="idea" placeholder="Present your idea here *">
+        <p><input type="checkbox" id="customeracquisition" name="customeracquisition"/><label for="customeracquisition"><span class="ui"></span>Customer Acquisition</label></p>
+        <p><input type="checkbox" id="customerservice" name="customerservice"/><label for="customerservice"><span class="ui"></span>Customer Service</label></p>
+        <p><input type="checkbox" id="products" name="products"/><label for="products"><span class="ui"></span>Products</label></p>
+        <p><input type="checkbox" id="mobile" name="mobile"/><label for="mobile"><span class="ui"></span>Mobile</label></p>
+        <p><input type="checkbox" id="atm" name="atm"/><label for="atm"><span class="ui"></span>ATM</label></p>
+        <p><input type="checkbox" id="web" name="web"/><label for="web"><span class="ui"></span>Web</label></p>
+        <input type="submit">
+      </form>
+    </div>
+  </body>
+</html>

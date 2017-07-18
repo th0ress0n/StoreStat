@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/lib/css/fontset.css">
+    <title>ADIB AppStore Statistics</title>
+  </head>
+  <body>
+    <!-- footer container -->
+    <div id="main-wrapper" class="mainwrapper">
+
+        <!-- Store - iTunes -->
+        <div id="left-container" class="leftcontainer">
+          <div id="store-wrapper" class="storewrapper  wrapmargin">
+              <div id="itunesstoreheader-text" class="storeheaderText">
+                  <div id="storeheader-image" class="storeheaderImage"><img id="store-logo" class="fw" src="/img/iTunesLogo.png"></div>
+                  <div id="itc-rangeselector" class="rangeselector">
+                    <select id="itcSelect" onchange="reloadItunes()"">
+                      <option value="7">Last 7 Days</option>
+                      <option value="14">Last 14 Days</option>
+                      <option value="30">Last 30 Days</option>
+                      <option value="90">Last 90 Days</option>
+                    </select>
+                  </div>
+              </div>
+              <div id="itc-store-container" class="storecontainer democont conradius">
+                
+              </div>
+          </div>
+          <div id="review-wrapper" class="reviewwrapper democont conradius wrapmargin">
+            
+          </div>
+
+          <!-- Store - Google Play -->
+          <div id="store-wrapper" class="storewrapper wrapmargin">
+              <div id="googlestoreheader-text" class="storeheaderText">
+                  <div id="storeheader-image" class="storeheaderImage"><img id="store-logo" class="fw" src="/img/GooglePlayLogo.png"></div>
+                  <div id="play-rangeselector" class="rangeselector">
+                    <select id="googleSelect" onchange="reloadGoogle()">
+                      <option value="7">Last 7 Days</option>
+                      <option value="14">Last 14 Days</option>
+                      <option value="30">Last 30 Days</option>
+                      <option value="90">Last 90 Days</option>
+                    </select>
+                  </div>
+              </div>
+              <div id="play-store-container" class="storecontainer democont conradius">
+                
+              </div>
+          </div>
+           <div id="review-wrapper" class="reviewwrapper democont conradius wrapmargin">
+            
+          </div>
+        </div>
+
+        <div id="right-container" class="rightcontainer">
+            <!-- Sidebar panels -->
+            <div id="install-stats" class="installstats wrapmargin">
+              <div id="install-statsheader" class="rightstatsheader">Install Statistics</div>
+              <div id="install-statscontainer" class="rightstatscontainer conradius democont">
+                <div id="install-statscontainer-inner" class="statscontainerinner">
+                  <!-- iOs -->
+                  <div id="install-ioswrapper" class="platformstatswrapper">
+                    <div id="install-ioslabel" class="platformstatslabel">iOs:</div>
+                    <div id="install-iosvalue" class="platformstatsvalue">0</div>
+                  </div>
+                  <!-- Android -->
+                  <div id="install-androidwrapper" class="platformstatswrapper">
+                    <div id="install-androidlabel" class="platformstatslabel">Android:</div>
+                    <div id="install-androidvalue" class="platformstatsvalue">0</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="active-devices-stats" class="activedevicestats wrapmargin">
+              <div id="active-statsheader" class="rightstatsheader">Active Device Statistics</div>
+              <div id="active-statscontainer" class="rightstatscontainer conradius democont">
+                <div id="active-statscontainer-inner" class="statscontainerinner">
+                  <!-- iOs -->
+                  <div id="device-ioswrapper" class="platformstatswrapper">
+                    <div id="device-ioslabel" class="platformstatslabel">iOs:</div>
+                    <div id="device-iosvalue" class="platformstatsvalue">0</div>
+                  </div>
+                  <!-- Android -->
+                  <div id="device-androidwrapper" class="platformstatswrapper">
+                    <div id="device-androidlabel" class="platformstatslabel">Android:</div>
+                    <div id="device-androidvalue" class="platformstatsvalue">0</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="sessions-stats" class="sessionstats wrapmargin">
+              <div id="sessions-statsheader" class="rightstatsheader">Sessions Statistics</div>
+              <div id="sessions-statscontainer" class="rightstatscontainer conradius democont">
+                <div id="sessions-statscontainer-inner" class="statscontainerinner">
+                  <!-- iOs -->
+                  <div id="session-ioswrapper" class="platformstatswrapper">
+                    <div id="session-ioslabel" class="platformstatslabel">iOs:</div>
+                    <div id="session-iosvalue" class="platformstatsvalue">0</div>
+                  </div>
+                  <!-- Android -->
+                  <div id="session-androidwrapper" class="platformstatswrapper">
+                    <div id="session-androidlabel" class="platformstatslabel">Android:</div>
+                    <div id="session-androidvalue" class="platformstatsvalue">0</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="crash-stats" class="crashstats wrapmargin">
+              <div id="crash-statsheader" class="rightstatsheader">Crash Statistics</div>
+              <div id="crash-statscontainer" class="rightstatscontainer conradius democont">
+                <div id="crash-statscontainer-inner" class="statscontainerinner">
+                  <!-- iOs -->
+                  <div id="crash-ioswrapper" class="platformstatswrapper">
+                    <div id="crash-ioslabel" class="platformstatslabel">iOs:</div>
+                    <div id="crash-iosvalue" class="platformstatsvalue">0</div>
+                  </div>
+                  <!-- Android -->
+                  <div id="crash-androidwrapper" class="platformstatswrapper">
+                    <div id="crash-androidlabel" class="platformstatslabel">Android:</div>
+                    <div id="crash-androidvalue" class="platformstatsvalue">0</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="units-stats" class="unitsstats wrapmargin">
+              <div id="units-statsheader" class="rightstatsheader">Units Statistics</div>
+              <div id="units-statscontainer" class="rightstatscontainer conradius democont">
+                <div id="units-statscontainer-inner" class="statscontainerinner">
+                  <!-- iOs -->
+                  <div id="units-ioswrapper" class="platformstatswrapper">
+                    <div id="units-ioslabel" class="platformstatslabel">iOs:</div>
+                    <div id="units-iosvalue" class="platformstatsvalue">0</div>
+                  </div>
+                  <!-- Android -->
+                  <div id="units-androidwrapper" class="platformstatswrapper">
+                    <div id="units-androidlabel" class="platformstatslabel">Android:</div>
+                    <div id="units-androidvalue" class="platformstatsvalue">0</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="review-stats" class="reviewstats wrapmargin">
+              <div id="review-statsheader" class="rightstatsheader">Review Statistics</div>
+              <div id="review-statscontainer" class="rightstatscontainer conradius democont">
+                <div id="review-statscontainer-inner" class="statscontainerinner">
+                  <!-- iOs -->
+                  <div id="review-ioswrapper" class="platformstatswrapper">
+                    <div id="review-ioslabel" class="platformstatslabel">iOs:</div>
+                    <div id="review-iosvalue" class="platformstatsvalue">0</div>
+                  </div>
+                  <!-- Android -->
+                  <div id="review-androidwrapper" class="platformstatswrapper">
+                    <div id="review-androidlabel" class="platformstatslabel">Android:</div>
+                    <div id="review-androidvalue" class="platformstatsvalue">0</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+
+        
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <!-- <script src="/lib/js/masonry.pkgd.min.js"></script> -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+
+      var socket = io.connect();
+      var container;
+      var currentFilters = []
+
+
+      socket.on('connect', function () { 
+        // TIP: you can avoid listening on `connect` and listen on events directly too!
+        console.log("CONNECT")
+        // get initial data from API with default range.
+        // setup UI
+        socket.emit('startup', { my: 'data' });
+
+      });
+
+      window.onload = function () {
+
+      };
+
+      $( document ).ready(function() {
+
+        // container = $( '#container' );
+        
+        createUI(); // kick off the whole thing
+
+        socket.on('update_chart', function(data) {
+          console.log("update_chart : "+JSON.stringify(data));
+          rebuildChart(data);
+        });
+
+        // load initial records
+        socket.on('update_all', function(data) {
+          console.log("update_all : "+data);
+        });
+        
+        socket.on('update_tweet', function (data) {
+          console.log("update_tweet : "+data);
+        });
+
+
+        socket.on('tweet', function (data) {
+          console.log("TWEET : "+data.user.name);
+        });
+
+      });
+
+
+
+      // UI LAYER
+      // ##################################################################################################
+      // ##################################################################################################
+      // select handlers
+      function reloadGoogle() {
+          var googleDays = document.getElementById("googleSelect").value;
+          console.log("googleDays : ",googleDays);
+          socket.emit('reload', { platform: 'google', range: googleDays });
+      }
+      function reloadItunes() {
+          var itcDays = document.getElementById("itcSelect").value;
+          console.log("itcDays : ",itcDays);
+          socket.emit('reload', { platform: 'itc', range: itcDays });
+      }
+
+      // ##################################################################################################
+      // ##################################################################################################
+
+      function createUI() {
+        console.log("START CREATING THE UI - !")
+      }
+
+      function removeChart(_elem){
+        var element = document.getElementById(_elem);
+        element.parentNode.removeChild(element);
+      }
+
+
+
+
+      function rebuildChart(_data){
+
+        // console.log("rebuildChart :: ",typeof(_data) );
+        // console.log(JSON.stringify("DATA : ",_data))
+
+        var build = {}
+        build.dates = [];
+        build.metris = [];
+        build.series = []
+        build.metrisObj = []
+        for (var i = _data.data.length - 1; i >= 0; i--) {
+          build.metris.push(_data.data[i].totals.key);
+          console.log(" Key for response : ",_data.data[i].totals.key);
+          // installs :: sessions :: pageViews :: activeDevices :: crashes :: payingUsers :: units :: sales :: iap (in app purchases) :: impressions :: impressionsUnique
+          
+          var a = new Array()
+          console.log()
+          for (var j = _data.data[i].data.length - 1; j >= 0; j--) {
+
+            switch(_data.data[i].totals.key){
+              case "crashes":
+                // loop through and accumulate crashes
+                var cp = {}
+                cp.name = "crashes"
+                // cp.count = cp.count + 
+                break;
+              case "units":
+                // loop through and extract total units
+                break;
+              case "sessions":
+                // loop through and accumulate sessions
+                break;
+              case "pageViews":
+
+                break;
+              case "installs":
+
+                break;
+              case "activeDevices":
+
+                break;
+            }
+
+            console.log("KNock Knock: ",_data.data[i].totals.key)
+
+            if(_data.data[i].totals.key == "impressionsTotal" || _data.data[i].totals.key == "impressionsTotalUnique"){
+              a.push(_data.data[i].data[j][_data.data[i].totals.key]);
+              console.log("--> ",_data.data[i].data[j][_data.data[i].totals.key] )
+              if(i==0){
+                build.dates.push(_data.data[i].data[j].date);
+              }
+            }
+          }
+          build.series.push(a);
+        }
+
+        if(_data.target=="itc"){
+
+            // removeChart("chart-ITC");
+            if(document.getElementById("chart-ITC")){
+              document.getElementById("chart-ITC").remove();
+            }
+            
+            var itcElement = document.createElement('div');
+            itcElement.id = "chart-ITC";
+            itcElement.className = "chartITC";
+            var itcInner = "<div id='itc-chart-wrapper' class='chartwrapper'>";
+            // the chart
+            itcInner += "<div class='ct-chart ct-perfect-fourth ct-perfect-itc-chart' id='itc-chart-inner'>"
+            itcInner += "</div>";
+            // end chart
+            itcInner += "</div>"; 
+            itcElement.innerHTML = itcInner; 
+
+            document.getElementById("itc-store-container").appendChild(itcElement);
+          
+            console.log("build.dates.length : ",build.dates.length)
+            console.log("build.series.length : ",build.series.length,"  Looks like : ",JSON.stringify(build.series))
+
+
+            // new Chartist.Line('.ct-perfect-itc-chart', {
+            //   labels: build.dates,
+            //   series: [
+            //     build.series
+            //   ]
+            // }, {
+            //   low: 0,
+            //   showArea: true
+            //   axisX: {
+            //     labelInterpolationFnc: function skipLabels(value, index) {
+            //       return index % 5  === 0 ? value : null;
+            //     }
+            //   }
+            // });
+
+
+            new Chartist.Line('.ct-perfect-itc-chart', {
+              labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+              series: build.series
+            }, {
+              fullWidth: true,
+              chartPadding: {
+                right: 50
+              },
+              // seriesBarDistance: 12,
+              axisX: {
+                labelInterpolationFnc: function skipLabels(value, index) {
+                  return index % 5  === 0 ? value : null;
+                }
+              },
+              axisY: {
+                onlyInteger: true,
+                offset: 20
+              },
+              // high:400,
+              low: 0,
+              showArea: true
+            });
+
+
+
+        }else if(_data.target=="google"){
+
+        }
+
+
+        
+
+      }
+
+      window.onresize = function(){
+
+          // fixLayout();
+      };
+
+      function fixLayout(){
+
+      }
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+/*===================== FONT FACE IMPORT =========================================== */
+
+   
+@font-face {
+    font-family: 'VWHeadlineOTBlack';
+    src: url('../../lib/font/vwheadline-black-webfont.eot');
+    src: url('../../lib/font/vwheadline-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../lib/font/vwheadline-black-webfont.woff') format('woff'),
+         url('../../lib/font/vwheadline-black-webfont.ttf') format('truetype'),
+         url('../../lib/font/vwheadline-black-webfont.svg#VWHeadlineOTBlack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'VWHeadlineOTBook';
+    src: url('../../lib/font/vwheadline-book-webfont.eot');
+    src: url('../../lib/font/vwheadline-book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../lib/font/vwheadline-book-webfont.woff') format('woff'),
+         url('../../lib/font/vwheadline-book-webfont.ttf') format('truetype'),
+         url('../../lib/font/vwheadline-book-webfont.svg#VWHeadlineOTBook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'VWHeadlineOTSemibold';
+    src: url('../../lib/font/vwheadline-semibold-webfont.eot');
+    src: url('../../lib/font/vwheadline-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../lib/font/vwheadline-semibold-webfont.woff') format('woff'),
+         url('../../lib/font/vwheadline-semibold-webfont.ttf') format('truetype'),
+         url('../../lib/font/vwheadline-semibold-webfont.svg#VWHeadlineOTSemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*==FUTURA IMPORT==*/
+
+@font-face {
+    font-family: 'FuturaStdBold';
+    src: url('../../lib/font/futurastd-bold-webfont.eot');
+    src: url('../../lib/font/futurastd-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../lib/font/futurastd-bold-webfont.woff') format('woff'),
+         url('../../lib/font/futurastd-bold-webfont.ttf') format('truetype'),
+         url('../../lib/font/futurastd-bold-webfont.svg#FuturaStdBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'FuturaStdBook';
+    src: url('../../lib/font/futurastd-book-webfont.eot');
+    src: url('../../lib/font/futurastd-book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../lib/font/futurastd-book-webfont.woff') format('woff'),
+         url('../../lib/font/futurastd-book-webfont.ttf') format('truetype'),
+         url('../../lib/font/futurastd-book-webfont.svg#FuturaStdBook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'FuturaStdBookOblique';
+    src: url('../../lib/font/futurastd-bookoblique-webfont.eot');
+    src: url('../../lib/font/futurastd-bookoblique-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../lib/font/futurastd-bookoblique-webfont.woff') format('woff'),
+         url('../../lib/font/futurastd-bookoblique-webfont.ttf') format('truetype'),
+         url('../../lib/font/futurastd-bookoblique-webfont.svg#FuturaStdBookOblique') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'FuturaStdLight';
+    src: url('../../lib/font/futurastd-light-webfont.eot');
+    src: url('../../lib/font/futurastd-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../lib/font/futurastd-light-webfont.woff') format('woff'),
+         url('../../lib/font/futurastd-light-webfont.ttf') format('truetype'),
+         url('../../lib/font/futurastd-light-webfont.svg#FuturaStdLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'FuturaStdMedium';
+    src: url('../../lib/font/futurastd-medium-webfont.eot');
+    src: url('../../lib/font/futurastd-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../lib/font/futurastd-medium-webfont.woff') format('woff'),
+         url('../../lib/font/futurastd-medium-webfont.ttf') format('truetype'),
+         url('../../lib/font/futurastd-medium-webfont.svg#FuturaStdMedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

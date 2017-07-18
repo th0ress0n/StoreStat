@@ -1,0 +1,33 @@
+{
+  "name": "storestats",
+  "version": "1.0.0",
+  "private": true,
+  "description": "App store statistics",
+  "main": "app.js",
+  "dependencies": {
+    "assert": "^0.4.9",
+    "body-parser": "^1.16.1",
+    "cfenv": "1.0.x",
+    "cloudant": "^1.7.1",
+    "express": "^2.5.11",
+    "itunesconnectanalytics": "^0.4.2",
+    "logger": "^0.0.1",
+    "math": "0.0.3",
+    "socket.io": "^2.0.3",
+    "util": "^0.4.9"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "itunes",
+    "googleplay"
+  ],
+  "repository": {},
+  "engines": {
+    "node": "4.x"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Per Thoresson",
+  "license": "ISC"
+}

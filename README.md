@@ -1,10 +1,8 @@
-# Node.js Hello World Sample
+# Node.js and Cloudant App to monitor AppStore Statistics
 
-This application demonstrates a simple, reusable Node.js web application based on the Express framework.
+Basic app to communicate with ITC and Play Store API to extract stats related to published apps.
 
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM-Bluemix/nodejs-helloworld)
-
-## Run the app locally
+## How to Run the app locally
 
 1. [Install Node.js][]
 + cd into this project's root directory

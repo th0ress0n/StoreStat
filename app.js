@@ -10,10 +10,9 @@ var express = require('express'),               //
     itc = require('itunesconnectanalytics');    // Apple iTunesConnect library
 
 
-var ITCusername = "per@thoresson.com.au";
-var ITCpassword = "P@ss1968";
-var ITCpasswordApp = "fdco-alrm-qtlr-ontq";
-var ITCappId = '824026409'; //Found in My Apps -> App -> Apple ID or read below on getting the app id.
+var ITCusername = "email";
+var ITCpassword = "Password";
+var ITCappId = 'AppID'; //Found in My Apps -> App -> Apple ID or read below on getting the app id.
 
 var Itunes = itc.Itunes;
 var AnalyticsQuery = itc.AnalyticsQuery;

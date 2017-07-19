@@ -138,7 +138,7 @@ select {
 */
 #right-container{}
 .rightcontainer{
-	width: 29%;
+	width: 15%;
     float: right;
     display: inline-block;
 }
@@ -147,7 +147,7 @@ select {
 .leftcontainer{
 	float: left;
     display: inline-block;
-    width: 70%;
+    width: 82%;
 }
 
 .conradius{
@@ -186,12 +186,16 @@ select {
     padding: 0;
     display: inline-block;
     margin-bottom: 30px;
+    background: #eee;
 }
 
 .storecontainer{
 	width: 100%;
     display: inline-block;
-    background: #ddd;
+    background: #eee;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 20px;
 }
 
 .storeheader{
@@ -224,7 +228,8 @@ select {
 
 /* Install Stats */
 #install-stats{
-	margin-top: 38px;
+	margin-top: 44px;
+	margin-bottom: 15px;
 }
 .installstats{
 
@@ -240,7 +245,9 @@ select {
 #install-androidvalue{}
 
 /* Device Stats */
-#active-devices-stats{}
+#active-devices-stats{
+	margin-bottom: 15px;
+}
 .activedevicestats{
 
 }
@@ -255,7 +262,9 @@ select {
 #device-androidvalue{}
 
 /* Session Stats */
-#sessions-stats{}
+#sessions-stats{
+	margin-bottom: 15px;
+}
 .sessionstats{
 
 }
@@ -270,7 +279,9 @@ select {
 #session-androidvalue{}
 
 /* Crash Stats */
-#crash-stats{}
+#crash-stats{
+	margin-bottom: 15px;
+}
 .crashstats{
 
 }
@@ -285,7 +296,9 @@ select {
 #crash-androidvalue{}
 
 /* Units Stats */
-#units-stats{}
+#units-stats{
+	margin-bottom: 15px;
+}
 .unitsstats{
 
 }
@@ -300,7 +313,9 @@ select {
 #units-androidvalue{}
 
 /* Review Stats */
-#review-stats
+#review-stats{
+	margin-bottom: 15px;
+}
 .reviewstats{
 
 }
@@ -316,24 +331,30 @@ select {
 
 
 
-
-
-
-/*#review-stats{
-	margin-top: 38px;
+#pageview-stats{
+	margin-bottom: 15px;
 }
-.reviewstats{
+.pageviewstats{}
+#pageview-statsheader{}
+#pageview-statscontainer{}
+#pageview-statscontainer-inner{}
+#pageview-ioswrapper{}
+#pageview-ioslabel{}
+#pageview-iosvalue{}
+#pageview-androidwrapper{}
+#pageview-androidlabel{}
+#pageview-androidvalue{}
 
+.statspacer{
+	margin-bottom: 10px;
 }
 
-.crashstats{
-
+.rightstatscontainer{
+	margin-bottom: 10px;
+	color:#000;
+	font-size: 110%;
+	background: #eee;
 }
-
-.activedevicestats{
-
-}
-*/
 
 .rightstatsheader{
 	height: 16px;
@@ -342,17 +363,23 @@ select {
     margin-bottom: 0px;
 }
 
-.rightstatscontainer{
-	margin-bottom: 10px;
-	color:#000;
-	font-size: 110%;
+.statscontainerinner{
+	padding: 15px;
 }
 
+.platformstatswrapper{
+	width: 100%;
+}
 
+.platformstatslabel{
+	width: 30%;
+    display: inline-block;
+    float: left;
+}
 
-
-
-
+.platformstatsvalue{
+	text-align: right;
+}
 
 #header-container{
 
@@ -367,6 +394,7 @@ select {
 #inner-header{
 
 }
+
 .innerheader{
 	width: 100%;
 }
@@ -443,89 +471,25 @@ select {
     display: inline;
 }
 
-
-/*
-000F4C - bg
-3277E8 - dark
-72CCFF - medium
-9DDEE8 - light
-E8FFFD - text*/
-
-
-.ct-chart .ct-series.ct-series-a .ct-bar[ct|meta="category1"] {
-  stroke: #3277E8;
-}
-
-.ct-chart .ct-series.ct-series-a .ct-bar[ct|meta="category2"] {
-  stroke: #72CCFF;
-}
-
-.ct-chart .ct-series.ct-series-a .ct-bar[ct|meta="category3"] {
-  stroke: #9DDEE8;
-}
-
-
-/*.ct-series-a .ct-slice-pie,
-.ct-series-a .ct-chart-pie,
-.ct-series-a .ct-bar,
-.ct-series-a .ct-line,
-.ct-series-a .ct-point {
-  stroke: #3277E8!important;
-  fill: #3277E8!important;
-}
-
-.ct-series-b .ct-slice-pie,
-.ct-series-b .ct-chart-pie,
-.ct-series-b .ct-bar,
-.ct-series-b .ct-line,
-.ct-series-b .ct-point {
-  stroke: #72CCFF!important;
-  fill: #72CCFF!important;
-}
-
-.ct-series-c .ct-slice-pie,
-.ct-series-c .ct-chart-pie,
-.ct-series-c .ct-bar,
-.ct-series-c .ct-line,
-.ct-series-c .ct-point {
-  stroke: #9DDEE8!important;
-  fill: #9DDEE8!important;
-}*/
-
-
-/*.ct-perfect-sentiment:before {
-    padding-bottom: 30%!important;
-}
-
-.ct-perfect-followers:before {
-    padding-bottom: 40%!important;
-}
-*/
-/*.ct-label {
-    font-size: 12px;
-    color:#E8FFFD!important;
-    font-weight: 200;
-}
-*/
 .ct-label {
-    fill: rgba(255, 255, 255, .9);
-    color: rgba(255, 255, 255, .9);
+    fill: rgba(0, 0, 0, .9);
+    color: rgba(0, 0, 0, .9);
 	font-weight: 200;
 	font-size: 12px;
+	margin-top: 6px;
 }
 
-/*.ct-chart .ct-chart-pie .ct-label {
-    font-size: 12px;
-    color:#E8FFFD!important;
-    font-weight: 200;
-}*/
+.ct-chart .ct-label.ct-horizontal {
+  text-align: center;
+  min-width: 40px;
+}
 
 .ct-text-color{
-	color:#E8FFFD!important;
+	color:#000!important;
 }
 
 .ct-line{
-	color:#E8FFFD!important;
+	color:#000!important;
 }
 /*
 .ct-grid.ct-horizontal {
@@ -534,3 +498,55 @@ E8FFFD - text*/
   stroke:#E8FFFD!important;
 }
 */
+
+/*  Dark 	#006B7B  */
+/*  Medium 	#259091  */
+/*  light 	#34C1C3  */
+/*  xlight 	#4BDFE2  */
+
+.ct-series-a .ct-area, .ct-series-a .ct-slice-donut-solid, .ct-series-a .ct-slice-pie { fill: #006B7B; }
+.ct-series-b .ct-area, .ct-series-b .ct-slice-donut-solid, .ct-series-b .ct-slice-pie { fill: #259091; }
+.ct-series-c .ct-area, .ct-series-c .ct-slice-donut-solid, .ct-series-c .ct-slice-pie { fill: #34C1C3; }
+
+.ct-series-a .ct-point, .ct-series-a .ct-slice-donut { stroke: #006B7B; }
+.ct-series-b .ct-point, .ct-series-b .ct-slice-donut { stroke: #259091; }
+.ct-series-c .ct-point, .ct-series-c .ct-slice-donut { stroke: #34C1C3; }
+
+.ct-area {
+    stroke: none;
+    fill-opacity: 0.2;
+}
+
+.ct-series-a .ct-bar, .ct-series-a .ct-line, .ct-series-a .ct-slice-donut {
+    stroke: #006B7B; 
+    stroke-width: 1px;
+}
+.ct-series-a .ct-point{
+	stroke: #006B7B; 
+	stroke-width: 5px;
+    stroke-linecap: round;
+}
+
+.ct-series-b .ct-bar, .ct-series-b .ct-line, .ct-series-b .ct-slice-donut {
+    stroke: #259091; 
+    stroke-width: 1px;
+}
+.ct-series-b .ct-point{
+	stroke: #259091; 
+	stroke-width: 5px;
+    stroke-linecap: round;
+}
+
+
+.ct-series-c .ct-bar, .ct-series-c .ct-line, .ct-series-c .ct-slice-donut {
+    stroke: #34C1C3; 
+    stroke-width: 1px;
+}
+.ct-series-c .ct-point{
+	stroke: #34C1C3; 
+	stroke-width: 5px;
+    stroke-linecap: round;
+}
+
+
+

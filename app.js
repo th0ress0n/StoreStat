@@ -10,9 +10,9 @@ var express = require('express'),               //
     itc = require('itunesconnectanalytics');    // Apple iTunesConnect library
 
 
-var ITCusername = "email";
-var ITCpassword = "Password";
-var ITCappId = 'AppID'; //Found in My Apps -> App -> Apple ID or read below on getting the app id.
+var ITCusername = "";
+var ITCpassword = "";
+var ITCappId = ""; //Found in My Apps -> App -> Apple ID or read below on getting the app id.
 
 var Itunes = itc.Itunes;
 var AnalyticsQuery = itc.AnalyticsQuery;
@@ -39,13 +39,10 @@ var cloudant = Cloudant("https://998da4d8-d1ac-46cc-a5fe-b2d096fca39a-bluemix:00
 // ------------------------------------------------------------
 // SOCKET Handling
 io.sockets.on('connection', function (socket) {
-  // socket.emit('news', { hello: 'world' }); // Send data to client
-  // console.log("IO connected : ",socket);
   sock = socket;
-
+  
   // wait for the event raised by the client
   socket.on('reload', function (data) {  
-    console.log("reload > : ",data);
     var range = 0;
     switch(data.range){
     	case "7":
@@ -64,32 +61,32 @@ io.sockets.on('connection', function (socket) {
     		range = 7;
     		break;	
     }
-    console.log("RANGE : ",range);
-    var rangeObj = getDateRangeFor(range);
-
-    console.log(JSON.stringify("rangeObj >> : ",rangeObj))
-    console.log(rangeObj.from,"  {}  ",rangeObj.to)
-
-    if(data.platform=="itc"){
-  		// installs :: sessions :: pageViews :: activeDevices :: crashes :: payingUsers :: units :: sales :: iap (in app purchases) :: impressions :: impressionsUnique
-    	var firstquery = new AnalyticsQuery.metrics(ITCappId, { measures: [itc.measures.impressions, itc.measures.impressionsUnique]}).time(range, 'days');
-    	var secondquery = new AnalyticsQuery.metrics(ITCappId, { measures: [itc.measures.sessions, itc.measures.pageViews]}).time(range, 'days');
-    	var thirdquery = new AnalyticsQuery.metrics(ITCappId, { measures: [itc.measures.crashes, itc.measures.activeDevices]}).time(range, 'days');
-    	var forthquery = new AnalyticsQuery.metrics(ITCappId, { measures: [itc.measures.installs, itc.measures.units]}).time(range, 'days');
-    	batchRequestList = [firstquery, secondquery, thirdquery, forthquery];
-    	batchRequest()
-    }else if(data.platform=="google"){
-    	// var gQ = returnITCrequest(ITCappId, "units", rangeObj.from, rangeObj.to);
-    	// var itcRes = getITCrequest( Q );
-    	// socket.emit('update_chart', { target: "itc", data: itcRes });
-    }
-
+    console.log("reload > RANGE : ",range);
+    buildQuery(range, data);
   });
 
   socket.on('startup', function (data) {  
     console.log("startup > : ",data);
+    buildQuery(7, {platform:"itc"});
   });
 });
+
+
+function buildQuery(_range, _data){
+  if(_data.platform=="itc"){
+      // installs :: sessions :: pageViews :: activeDevices :: crashes :: payingUsers :: units :: sales :: iap (in app purchases) :: impressions :: impressionsUnique
+      var firstquery = new AnalyticsQuery.metrics(ITCappId, { measures: [itc.measures.impressions, itc.measures.impressionsUnique]}).time(_range, 'days');
+      var secondquery = new AnalyticsQuery.metrics(ITCappId, { measures: [itc.measures.sessions, itc.measures.pageViews]}).time(_range, 'days');
+      var thirdquery = new AnalyticsQuery.metrics(ITCappId, { measures: [itc.measures.crashes, itc.measures.activeDevices]}).time(_range, 'days');
+      var forthquery = new AnalyticsQuery.metrics(ITCappId, { measures: [itc.measures.installs, itc.measures.units]}).time(_range, 'days');
+      batchRequestList = [firstquery, secondquery, thirdquery, forthquery];
+      batchRequest()
+    }else if(_data.platform=="google"){
+      // var gQ = returnITCrequest(ITCappId, "units", rangeObj.from, rangeObj.to);
+      // var itcRes = getITCrequest( Q );
+      // socket.emit('update_chart', { target: "itc", data: itcRes });
+    }
+}
 
 
 

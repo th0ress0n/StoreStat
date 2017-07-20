@@ -274,154 +274,150 @@
         build.metris = [];
         build.series = []
         build.metrisObj = []
-        for (var i = _data.data.length - 1; i >= 0; i--) {
-          build.metris.push(_data.data[i].totals.key);
-          // installs :: sessions :: pageViews :: activeDevices :: crashes :: payingUsers :: units :: sales :: iap (in app purchases) :: impressions :: impressionsUnique
-          var a = new Array()
-          for (var j = _data.data[i].data.length - 1; j >= 0; j--) {
-            switch(_data.data[i].totals.key){
-              case "crashes":
-                var cp = {}  // loop through and accumulate crashes
-                cp.name = "crashes"
-                cp.list = [];
-                cp.total = 0;
-                for (var k = _data.data[i].data.length - 1; k >= 0; k--) {
-                  cp.list.push( _data.data[i].data[k].crashes );
-                  cp.total = cp.total + _data.data[i].data[k].crashes;
+        if(_data.data){
+
+          for (var i = _data.data.length - 1; i >= 0; i--) {
+            build.metris.push(_data.data[i].totals.key);
+            // installs :: sessions :: pageViews :: activeDevices :: crashes :: payingUsers :: units :: sales :: iap (in app purchases) :: impressions :: impressionsUnique
+            var a = new Array()
+            for (var j = _data.data[i].data.length - 1; j >= 0; j--) {
+              switch(_data.data[i].totals.key){
+                case "crashes":
+                  var cp = {}  // loop through and accumulate crashes
+                  cp.name = "crashes"
+                  cp.list = [];
+                  cp.total = 0;
+                  for (var k = _data.data[i].data.length - 1; k >= 0; k--) {
+                    cp.list.push( _data.data[i].data[k].crashes );
+                    cp.total = cp.total + _data.data[i].data[k].crashes;
+                  }
+                  document.getElementById("crash-iosvalue").innerHTML = cp.total;
+                  break;
+                case "units":
+                  var ut = {} // loop through and extract total units
+                  ut.name = "units"
+                  ut.list = [];
+                  ut.total = 0;
+                  for (var l = _data.data[i].data.length - 1; l >= 0; l--) {
+                    ut.list.push( _data.data[i].data[l].units );
+                    ut.total = ut.total + _data.data[i].data[l].units;
+                  }
+                  document.getElementById("units-iosvalue").innerHTML = ut.total;
+                  break;
+                case "sessions":
+                  var ss = {} // loop through and accumulate sessions
+                  ss.name = "sessions"
+                  ss.list = [];
+                  ss.total = 0;
+                  for (var m = _data.data[i].data.length - 1; m >= 0; m--) {
+                    ss.list.push( _data.data[i].data[m].sessions );
+                    ss.total = ss.total + _data.data[i].data[m].sessions;
+                  }
+                  document.getElementById("session-iosvalue").innerHTML = ss.total;
+                  break;
+                case "pageViewCount":
+                  var pw = {} // loop through and accumulate sessions
+                  pw.name = "pageViewCount"
+                  pw.list = [];
+                  pw.total = 0;
+                  for (var n = _data.data[i].data.length - 1; n >= 0; n--) {
+                    pw.list.push( _data.data[i].data[n].pageViewCount );
+                    pw.total = pw.total + _data.data[i].data[n].pageViewCount;
+                  }
+                  document.getElementById("pageview-iosvalue").innerHTML = pw.total;
+                  break;
+                case "installs":
+                  var is = {} // loop through and accumulate sessions
+                  is.name = "installs"
+                  is.list = [];
+                  is.total = 0;
+                  for (var o = _data.data[i].data.length - 1; o >= 0; o--) {
+                    is.list.push( _data.data[i].data[o].installs );
+                    is.total = is.total + _data.data[i].data[o].installs;
+                  }
+                  document.getElementById("install-iosvalue").innerHTML = is.total;
+                  break;
+                case "activeDevices":
+                  var ad = {} // loop through and accumulate Active Devices
+                  ad.name = "pageViewCount"
+                  ad.list = [];
+                  ad.total = 0;
+                  for (var p = _data.data[i].data.length - 1; p >= 0; p--) {
+                    ad.list.push( _data.data[i].data[p].activeDevices );
+                    ad.total = ad.total + _data.data[i].data[p].activeDevices;
+                  }
+                  document.getElementById("device-iosvalue").innerHTML = ad.total;
+                  break;
+              }
+              if(_data.data[i].totals.key == "impressionsTotal" || _data.data[i].totals.key == "impressionsTotalUnique"){
+                a.push(_data.data[i].data[j][_data.data[i].totals.key]);
+                if(i==0){
+                  var nDate = new Date(_data.data[i].data[j].date).toDateString(); // format dates
+                  build.dates.push(nDate);
                 }
-                document.getElementById("crash-iosvalue").innerHTML = cp.total;
-                break;
-              case "units":
-                var ut = {} // loop through and extract total units
-                ut.name = "units"
-                ut.list = [];
-                ut.total = 0;
-                for (var l = _data.data[i].data.length - 1; l >= 0; l--) {
-                  ut.list.push( _data.data[i].data[l].units );
-                  ut.total = ut.total + _data.data[i].data[l].units;
-                }
-                document.getElementById("units-iosvalue").innerHTML = ut.total;
-                break;
-              case "sessions":
-                var ss = {} // loop through and accumulate sessions
-                ss.name = "sessions"
-                ss.list = [];
-                ss.total = 0;
-                for (var m = _data.data[i].data.length - 1; m >= 0; m--) {
-                  ss.list.push( _data.data[i].data[m].sessions );
-                  ss.total = ss.total + _data.data[i].data[m].sessions;
-                }
-                document.getElementById("sessions-iosvalue").innerHTML = ss.total;
-                break;
-              case "pageViewCount":
-                var pw = {} // loop through and accumulate sessions
-                pw.name = "pageViewCount"
-                pw.list = [];
-                pw.total = 0;
-                for (var n = _data.data[i].data.length - 1; n >= 0; n--) {
-                  pw.list.push( _data.data[i].data[n].pageViewCount );
-                  pw.total = pw.total + _data.data[i].data[n].pageViewCount;
-                }
-                document.getElementById("pageview-iosvalue").innerHTML = pw.total;
-                break;
-              case "installs":
-                var is = {} // loop through and accumulate sessions
-                is.name = "installs"
-                is.list = [];
-                is.total = 0;
-                for (var o = _data.data[i].data.length - 1; o >= 0; o--) {
-                  is.list.push( _data.data[i].data[o].installs );
-                  is.total = is.total + _data.data[i].data[o].installs;
-                }
-                document.getElementById("install-iosvalue").innerHTML = is.total;
-                break;
-              case "activeDevices":
-                var ad = {} // loop through and accumulate Active Devices
-                ad.name = "pageViewCount"
-                ad.list = [];
-                ad.total = 0;
-                for (var p = _data.data[i].data.length - 1; p >= 0; p--) {
-                  ad.list.push( _data.data[i].data[p].activeDevices );
-                  ad.total = ad.total + _data.data[i].data[p].activeDevices;
-                }
-                document.getElementById("device-iosvalue").innerHTML = ad.total;
-                break;
-            }
-            if(_data.data[i].totals.key == "impressionsTotal" || _data.data[i].totals.key == "impressionsTotalUnique"){
-              a.push(_data.data[i].data[j][_data.data[i].totals.key]);
-              if(i==0){
-                var nDate = new Date(_data.data[i].data[j].date).toDateString(); // format dates
-                build.dates.push(nDate);
               }
             }
+            build.dates.reverse()
+            a.reverse();
+            build.series.push(a);
           }
-          build.dates.reverse()
-          a.reverse();
-          build.series.push(a);
+
+
+          // CHART SETUP -------------------------------------------------
+          // -------------------------------------------------------------
+          if(_data.target=="itc"){
+              if(document.getElementById("chart-ITC")){
+                document.getElementById("chart-ITC").remove();
+              }
+              var itcElement = document.createElement('div');
+              itcElement.id = "chart-ITC";
+              itcElement.className = "chartITC";
+              var itcInner = "<div id='itc-chart-wrapper' class='chartwrapper'>";
+              // the chart
+              itcInner += "<div class='ct-chart ct-perfect-fourth ct-perfect-itc-chart' id='itc-chart-inner'>"
+              itcInner += "</div>";
+              // end chart
+              itcInner += "</div>"; 
+              itcElement.innerHTML = itcInner; 
+              document.getElementById("itc-store-container").appendChild(itcElement);
+
+              var split = 0
+              switch(build.dates.length){
+                case 8: split = 1 break;
+                case 15: split = 3 break;
+                case 31: split = 5 break;
+                case 91: split = 9 break;
+              }
+
+              new Chartist.Line('.ct-perfect-itc-chart', {
+                labels: build.dates,
+                series: build.series
+              }, {
+                fullWidth: true,
+                chartPadding: {
+                  right: 50
+                },
+                // seriesBarDistance: 12,
+                axisX: {
+                  labelInterpolationFnc: function skipLabels(value, index) {
+                    return index % split  === 0 ? value : null;
+                  }
+                },
+                axisY: {
+                  onlyInteger: true,
+                  offset: 20
+                },
+                // high:400,
+                low: 0,
+                showArea: true
+              });
+
+          }else if(_data.target=="google"){
+
+          }
+          // -------------------------------------------------------------
+          // -------------------------------------------------------------
         }
-
-        if(_data.target=="itc"){
-            if(document.getElementById("chart-ITC")){
-              document.getElementById("chart-ITC").remove();
-            }
-            var itcElement = document.createElement('div');
-            itcElement.id = "chart-ITC";
-            itcElement.className = "chartITC";
-            var itcInner = "<div id='itc-chart-wrapper' class='chartwrapper'>";
-            // the chart
-            itcInner += "<div class='ct-chart ct-perfect-fourth ct-perfect-itc-chart' id='itc-chart-inner'>"
-            itcInner += "</div>";
-            // end chart
-            itcInner += "</div>"; 
-            itcElement.innerHTML = itcInner; 
-            document.getElementById("itc-store-container").appendChild(itcElement);
-
-            var split = 0
-            switch(build.dates.length){
-              case 8:
-                split = 1;
-                break;
-              case 15:
-                split = 3;
-                break;
-              case 31:
-                split = 5;
-                break;
-              case 91:
-                split = 9;
-                break;
-            }
-
-            new Chartist.Line('.ct-perfect-itc-chart', {
-              labels: build.dates,
-              series: build.series
-            }, {
-              fullWidth: true,
-              chartPadding: {
-                right: 50
-              },
-              // seriesBarDistance: 12,
-              axisX: {
-                labelInterpolationFnc: function skipLabels(value, index) {
-                  return index % split  === 0 ? value : null;
-                }
-              },
-              axisY: {
-                onlyInteger: true,
-                offset: 20
-              },
-              // high:400,
-              low: 0,
-              showArea: true
-            });
-
-        }else if(_data.target=="google"){
-
-        }
-
-
-        
-
       }
 
       window.onresize = function(){

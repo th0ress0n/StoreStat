@@ -13,8 +13,7 @@ var express = require('express'),               //
 var cpass = new Cpass();
 var uHash = "";
 var pHash = "";
-var uHash = "96c97f905523c9027d6c5a4fb8da79609496a1b17341482f9bf724e6fa0f71dc84c4173dee1c755dd03f700d966e3966y52PUhWqjDcI/bRtpjWAJO8KmsiFDy5UD57RZgI5Jkw=";
-var pHash = "27c73af9d802208b24ab2ee68db1807de136d3d48cce8523c974261390f412c761d90a3a1c97436d07dbf997df1ac4f2sN9GNiycS5ApcbDSWlLrgQ==";
+
 var ITCusername = cpass.decode(uHash);
 var ITCpassword = cpass.decode(pHash);
 var ITCappId = '824026409'; //Found in My Apps -> App -> Apple ID or read below on getting the app id.

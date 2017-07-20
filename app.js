@@ -7,12 +7,16 @@ var express = require('express'),               //
     app = express.createServer(),
     math = require('math'),                     
     io = require('socket.io').listen(app),      // www.npmjs.com/package/socket.io - Socket.IO enables real-time bidirectional event-based communication
-    itc = require('itunesconnectanalytics');    // Apple iTunesConnect library
+    itc = require('itunesconnectanalytics'),    // Apple iTunesConnect library
+    Cpass = require('cpass').Cpass;
 
+var cpass = new Cpass();
+var uHash = "";
+var pHash = "";
 
-var ITCusername = "";
-var ITCpassword = "";
-var ITCappId = ""; //Found in My Apps -> App -> Apple ID or read below on getting the app id.
+var ITCusername = cpass.decode(uHash);
+var ITCpassword = cpass.decode(pHash);
+var ITCappId = '824026409'; //Found in My Apps -> App -> Apple ID or read below on getting the app id.
 
 var Itunes = itc.Itunes;
 var AnalyticsQuery = itc.AnalyticsQuery;

@@ -14,9 +14,12 @@
     "logger": "^0.0.1",
     "math": "0.0.3",
     "socket.io": "^2.0.3",
-    "util": "^0.4.9"
+    "util": "^0.4.9",
+    "cpass": "^2.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "cpass": "^2.0.0"
+  },
   "keywords": [
     "itunes",
     "googleplay"
